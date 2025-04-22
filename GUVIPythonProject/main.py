@@ -1,5 +1,5 @@
 '''Question 1: Guess the number
-Program to guess the random number selected by the computer
+This program is to guess the random number selected by the computer
 '''
 
 import random
