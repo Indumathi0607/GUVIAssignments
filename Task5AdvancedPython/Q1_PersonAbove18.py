@@ -6,7 +6,7 @@ people's names to a new list'''
 peopleList = [{'name': 'Indu', 'age': 28},
               {'name': 'Sai', 'age': 2},
               {'name': 'Sri', 'age': 6},
-              {'name': 'Raj', 'age': 34},
+              {'name': 'Karthick', 'age': 34},
               {'name': 'Krish', 'age': 10},
               {'name': 'Madhu', 'age': 18},
               {'name': 'Karan', 'age': 19},
@@ -16,10 +16,10 @@ peopleList = [{'name': 'Indu', 'age': 28},
 print("Given people list: ", peopleList)
 
 #Used Filter and lambda methods to filter people >=18 years old
-removePeopleBelow18 = filter(lambda person: person['age']>17, peopleList)
+filterPeopleBelow18 = filter(lambda person: person['age']>17, peopleList)
 
 #Used Map and Lambda methods to map the name of above filtered list
-newPeopleListAbove = list(map(lambda person: person['name'], removePeopleBelow18))
+newPeopleListAbove = list(map(lambda person: person['name'], filterPeopleBelow18))
 
 print("People list whose age is >=18", newPeopleListAbove)
 
