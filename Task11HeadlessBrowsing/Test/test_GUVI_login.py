@@ -82,7 +82,7 @@ class TestGUVILogin:
         login_page.close_chrome_login_suggestion()
 
         # Fill in username, password and submit login
-        login_page.enter_username("indulax.88@gmail.com") #removed valid user name after execution
+        login_page.enter_username("Removed") #removed valid user name after execution
         login_page.enter_password("123456")
         login_page.submit_login()
 
@@ -102,8 +102,8 @@ class TestGUVILogin:
         login_page.close_chrome_login_suggestion()
 
         # Fill in username, password and submit login
-        login_page.enter_username("indulax.88@gmail.com")#removed valid user name after execution
-        login_page.enter_password("Indguv@123")#removed valid password after execution
+        login_page.enter_username("Removed")#removed valid user name after execution
+        login_page.enter_password("Removed")#removed valid password after execution
         login_page.submit_login()
         driver.save_screenshot("/screenshots/T7_1.png")
 
