@@ -1,5 +1,7 @@
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class LoginPage:
@@ -20,7 +22,7 @@ class LoginPage:
     def close_chrome_login_suggestion(self):
         self.driver.find_element(By.CLASS_NAME, self.login_header).click()
 
-    #Method to find username label
+    # Method to find username label
     def get_username_label(self):
         try:
             return self.driver.find_element(By.XPATH, self.username_label).text.strip()
@@ -35,7 +37,7 @@ class LoginPage:
     def enter_username(self, username):
         self.driver.find_element(By.XPATH, self.username_textbox).send_keys(username)
 
-    #Method to find password label
+    # Method to find password label
     def get_password_label(self):
         try:
             return self.driver.find_element(By.XPATH, self.password_label).text.strip()
@@ -52,7 +54,9 @@ class LoginPage:
 
     # Method to click login
     def submit_login(self):
-        self.driver.find_element(By.XPATH, self.login_button).click()
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, self.login_button))
+        ).click()
 
     # Method to get invalid username error
     def get_username_error(self):

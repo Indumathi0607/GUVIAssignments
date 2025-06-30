@@ -1,19 +1,22 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from PageActions.login_actions import LoginActions
 
 
 @pytest.fixture
 def driver():
 
     #Setting up headless browser execution
-    options = Options()
-
-    options.add_argument("--headless=new")
-
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument("window-size=1920,1080")
     driver = webdriver.Chrome(options=options)
+
     driver.get("https://www.guvi.in/") #Launch GUVI website
-    driver.maximize_window()
+
+    #navigate to Login screen
+    login_action = LoginActions()
+    login_action.get_into_login_webpage(driver)
 
     yield driver #returns driver
     driver.close()
