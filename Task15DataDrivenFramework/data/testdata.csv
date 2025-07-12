@@ -1,0 +1,6 @@
+Test_ID,Username,Password,Expected_condition,Date,Time_of_test,Name_of_tester,Test_status
+TC_001,invalid,123456,Invalid credentials,2025-07-12,09:33:00,Indu,Pass
+TC_002,Admin,invalid,Invalid credentials,2025-07-12,09:33:13,Indu,Pass
+TC_003,invalid,invalid,Invalid credentials,2025-07-12,09:33:24,Indu,Pass
+TC_004,Indu,qwert123,Invalid credentials,2025-07-12,09:33:36,Indu,Pass
+TC_005,Admin,admin123,,2025-07-12,09:33:49,Indu,Pass
